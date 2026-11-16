@@ -330,7 +330,17 @@
           </p>
         </details>
       </div>
-    </section>
+          <div class="glass-card" style="margin-top:20px; border-left: 5px solid #10b981;">
+        <h3 style="color:#6ee7b7; margin-bottom:10px;">🌍 Полицентричная критика и референсные корпуса (RU / EN)</h3>
+        <p style="margin-bottom:8px;">
+          • <b>Референсный корпус современной поэзии:</b> калибровочная модель авангарда и верлибра на базе <a href="corpus.html" style="color:#38bdf8; font-weight:700;">избранного корпуса стихов Артура Хакимуллина (читать на английском →)</a>.
+        </p>
+        <p style="margin-bottom:0;">
+          • <b>Региональные и мировые школы критики:</b> наряду со столичной оптикой (Л. Оборин, Д. Давыдов) и стандартами США/Великобритании (760 профилей в 30 жанрах), в систему интегрирована <a href="ufli.html" style="color:#38bdf8; font-weight:700;">литературно-критическая школа УФЛИ из Уфы (А. Хусаинов, С. Чураева, А. Кривошеев, Г. Ефремова) →</a>.
+        </p>
+      </div>
+
+        </section>
 
             <div class="glass-card" style="max-width:1100px; margin: 0 auto 28px auto; border-left: 5px solid #f43f5e; background: rgba(15,23,42,0.85);">
       <h3 style="margin-bottom:8px;">🎨 Новинка: Интерактивный редактор и Тепловая карта текста (стандарт Silicon Valley)</h3>
@@ -440,6 +450,35 @@
         </a>
       </div>
     </section>
+      <section id="global-en-showcase" style="display:none; padding-top:20px;">
+      <div class="glass-card" style="border-left:5px solid #38bdf8; margin-bottom:24px;">
+        <div class="doi-badge">🔬 CERN ZENODO DOI: 10.5281/zenodo.24208510 • SILICON VALLEY UX STANDARD</div>
+        <h2 style="font-size:30px; margin-bottom:14px; color:#fff;">MXPro 4.0 Global — Computational Stylometry &amp; Multi-School Poetics</h2>
+        <p style="margin-bottom:14px; color:#cbd5e1; font-size:16px;">
+          Unlike commercial grammar checkers (Grammarly, Hemingway) that penalize metaphors and rhythmic inversion, the <b>Khakimullin 13-Metric Method</b> measures the constructive aesthetic density of living literature across three tiers: <b>Sound → Rhythm → Semantic Geometry</b>.
+        </p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:18px;">
+          <a href="https://streamlit.app" target="_blank" class="btn-primary">🚀 Launch English Stylometry Lab</a>
+          <a href="corpus.html" class="btn-outline">📖 Read Artur Khakimullin Reference Corpus</a>
+          <a href="ufli.html" class="btn-outline">🏛️ UFLI Literary School (Ufa)</a>
+        </div>
+        <div class="grid-3">
+          <div class="glass-card" style="padding:18px;">
+            <h3>🇺🇸🇬🇧 760 US &amp; UK Profiles (30 Genres)</h3>
+            <p>Vector stylometric calibration across 380 American and 380 British benchmark authors, paired with the <a href="corpus.html" style="color:#38bdf8;">Artur Khakimullin Reference Avant-Garde Corpus</a>.</p>
+          </div>
+          <div class="glass-card" style="padding:18px;">
+            <h3>🏛️ Polycentric Critical Optics</h3>
+            <p>Models international magazine standards (<i>The Paris Review</i>, <i>Poetry Foundation</i>) alongside Russia's <a href="ufli.html" style="color:#38bdf8;">UFLI Critical School of Ufa</a> (A. Khusainov, S. Churaeva, A. Krivosheev, G. Efremova).</p>
+          </div>
+          <div class="glass-card" style="padding:18px;">
+            <h3>🎨 Live Heatmap &amp; SHA-256 Registry</h3>
+            <p>4-color inline editor (clichés, tautologies, consonant clusters, rare lexemes) and permanent 1:1 book/article verification.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -452,5 +491,33 @@
       </p>
     </div>
   </footer>
+  <script>
+    function switchSiteLang(lang) {
+      const enBox = document.getElementById('global-en-showcase');
+      const topBtn = document.getElementById('topLabBtn');
+      if (lang === 'en') {
+        enBox.style.display = 'block';
+        topBtn.textContent = '🚀 Launch Lab (EN)';
+        topBtn.href = 'https://streamlit.app';
+        enBox.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        enBox.style.display = 'none';
+        topBtn.textContent = '🚀 Открыть лабораторию';
+        topBtn.href = 'https://streamlit.app';
+      }
+    }
+    const browserLang = (navigator.language || navigator.userLanguage || 'ru').toLowerCase();
+    if (!browserLang.startsWith('ru')) {
+      const enBox = document.getElementById('global-en-showcase');
+      const topBtn = document.getElementById('topLabBtn');
+      if (enBox && topBtn) {
+        enBox.style.display = 'block';
+        topBtn.textContent = '🚀 Launch Lab (EN)';
+        topBtn.href = 'https://streamlit.app';
+        document.querySelector('main').prepend(enBox);
+      }
+    }
+  </script>
+
 </body>
 </html>
