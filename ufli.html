@@ -33,7 +33,7 @@
       <div style="display:flex; gap:10px; align-items:center;">
         <button onclick="setLang('ru')" class="btn-outline">🇷🇺 RU</button>
         <button onclick="setLang('en')" class="btn-outline">🇬🇧 EN</button>
-        <a href="https://streamlit.app" target="_blank" class="btn-primary" id="labBtn">🚀 Открыть лабораторию</a>
+        <a href="https://mx-pro.streamlit.app/" target="_blank" class="btn-primary" id="labBtn">🚀 Открыть лабораторию</a>
       </div>
     </div>
   </header>
@@ -74,7 +74,17 @@
         </div>
       </div>
     </div>
-        <div id="lang-en" style="display:none;">
+        <div class="card" style="border-left: 5px solid #10b981;">
+        <h2 style="color:#6ee7b7;">🔬 Как оптика школы УФЛИ работает в алгоритмах MXPro 4.0</h2>
+        <p>При выборе оптики УФЛИ в лаборатории математическое ядро автоматически перекалибрует весовые коэффициенты экспертизы:</p>
+        <p style="margin-bottom:0;">
+          • <b>Жёсткий анти-штамп фильтр:</b> повышенные штрафы за «красивости», сентиментальные клише и страдательный залог (ProWritingAid / 8 слоёв клише);<br>
+          • <b>Ритмическая упругость:</b> приоритет дисперсии межиктовых интервалов (по М. Л. Гаспарову) и живой акцентной речи над гладкой силлабо-тоникой;<br>
+          • <b>Предметная конкретика и связность:</b> контроль глагольной динамики, когезии Coh-Metrix и фоносемантической плотности (по А. П. Журавлёву и ИРЯ РАН).
+        </p>
+      </div>
+   
+    <div id="lang-en" style="display:none;">
       <section class="hero-box">
         <div class="badge">🏛️ POLYCENTRIC WORLD LITERATURE • UFA, BASHKORTOSTAN</div>
         <h1>UFLI Literary &amp; Critical School ("Ufa Literature")</h1>
@@ -108,6 +118,16 @@
           </div>
         </div>
       </div>
+        <div class="card" style="border-left: 5px solid #10b981;">
+        <h2 style="color:#6ee7b7;">🔬 How UFLI Critical Optics Operates Inside MXPro 4.0 Algorithms</h2>
+        <p>Selecting UFLI Optics recalibrates the stylometric weighting engine toward uncompromising editorial rigor:</p>
+        <p style="margin-bottom:0;">
+          • <b>Strict Anti-Ornamental Filter:</b> heightened penalties for poetic clichés, sentimental filler, and passive voice (ProWritingAid &amp; 8-layer scanner);<br>
+          • <b>Rhythmic Resilience:</b> prioritizes inter-ictus interval dispersion (Gasparov Standard) and living accentual cadence over mechanical meter;<br>
+          • <b>Concrete Precision &amp; Cohesion:</b> enforces high verb-to-adjective energy, Coh-Metrix referential cohesion, and Zhuravlev–Jakobson phonosemantic density.
+        </p>
+      </div>
+
     </div>
   </main>
 
@@ -125,7 +145,8 @@
       document.getElementById('backBtn').textContent = (lang === 'ru') ? '← На портал MXPro 4.0' : '← Back to MXPro 4.0 Portal';
       const lab = document.getElementById('labBtn');
       lab.textContent = (lang === 'ru') ? '🚀 Открыть лабораторию' : '🚀 Open Stylometric Lab';
-      lab.href = (lang === 'ru') ? 'https://streamlit.app' : 'https://streamlit.app?lang=en';
+      lab.href = (lang === 'ru') ? 'https://mx-pro.streamlit.app/' : 'https://mx-pro.streamlit.app/?lang=en';
+
     }
     const userLang = (navigator.language || navigator.userLanguage || 'ru').toLowerCase();
     if (!userLang.startsWith('ru')) { setLang('en'); }
