@@ -671,38 +671,45 @@
     </section>
   </main>
 
-    <footer>
+      <footer>
     <div class="container">
       <p id="footerTitle" style="margin-bottom:6px; color:#e2e8f0; font-weight:600;">
         MXPro 4.0 — Филологический и стилометрический комплекс А. Хакимуллина
       </p>
       <p id="footerSub">
-        Индекс научной публикации: <a href="https://doi.org/10.5281/zenodo.24208510" target="_blank" style="color:#38bdf8;">CERN Zenodo DOI: 10.5281/zenodo.24208510</a> • Все права защищены
+        Индекс научной публикации: <a href="https://doi.org" target="_blank" style="color:#38bdf8;">CERN Zenodo DOI: 10.5281/zenodo.24208510</a> • Все права защищены
+      </p>
     </div>
   </footer>
-
-    <script>
+  <script>
     const SVG_ARROW = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-3px;margin-right:6px;"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>';
     function switchSiteLang(lang) {
       const ruBox = document.getElementById('portal-ru');
       const enBox = document.getElementById('global-en-showcase');
       const topBtn = document.getElementById('topLabBtn');
+      const fTitle = document.getElementById('footerTitle');
+      const fSub = document.getElementById('footerSub');
       if (lang === 'en') {
         if (ruBox) ruBox.style.display = 'none';
         if (enBox) enBox.style.display = 'block';
         if (topBtn) {
           topBtn.innerHTML = SVG_ARROW + 'Launch Lab (EN)';
-          topBtn.href = 'https://streamlit.app';
+          topBtn.href = 'https://mx-pro.streamlit.app/?lang=en';
         }
+        if (fTitle) fTitle.textContent = 'MXPro 4.0 — Computational Philology & Stylometry Suite (The Artur Khakimullin Method)';
+        if (fSub) fSub.innerHTML = 'Indexed at: <a href="https://doi.org/10.5281/zenodo.24208510" target="_blank" style="color:#38bdf8;">CERN Zenodo DOI: 10.5281/zenodo.24208510</a> • All rights reserved';
       } else {
         if (ruBox) ruBox.style.display = 'block';
         if (enBox) enBox.style.display = 'none';
         if (topBtn) {
           topBtn.innerHTML = SVG_ARROW + 'Открыть лабораторию';
-          topBtn.href = 'https://streamlit.app';
+          topBtn.href = 'https://mx-pro.streamlit.app/';
         }
+        if (fTitle) fTitle.textContent = 'MXPro 4.0 — Филологический и стилометрический комплекс А. Хакимуллина';
+        if (fSub) fSub.innerHTML = 'Индекс научной публикации: <a href="https://doi.org/10.5281/zenodo.24208510" target="_blank" style="color:#38bdf8;">CERN Zenodo DOI: 10.5281/zenodo.24208510</a> • Все права защищены';
       }
     }
+
     const browserLang = (navigator.language || navigator.userLanguage || 'ru').toLowerCase();
     if (!browserLang.startsWith('ru')) { switchSiteLang('en'); }
 
